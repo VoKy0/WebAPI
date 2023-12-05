@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        table,
+        tr,
+        td {
+            width: 100%;
+        }
+
+        .content td{
+            padding: 10px 0;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<table width="100%" style="background-color: #e9ecef; padding: 40px 0;">
+    <tr style="margin-top: 40px;">
+        <td align="center" >
+            <table width="100%" style="max-width: 680px; background-color: white;">
+                <tr>
+                    <td align="left">
+                        <img src="https://www.blogdesire.com/wp-content/uploads/2019/07/blogdesire-1.png" alt="Logo"
+                             border="0" width="48"
+                             style="display: block; width: 70px; max-width: 70px; min-width: 48px; margin-bottom: 20px; margin :10px 20px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr style="width: 100%; border: 0.5px solid rgb(215 215 215);">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="content" style="padding: 10px 60px; width: 680px; max-width: 680px;">
+                            <tr>
+                                <td> Hi {{user_name}},</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    To activate your SoftZone Account, please verify your email address. <br>
+                                    Your account will not be created until your email address is confirmed.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 40px;">
+                                    <a href="{{reset_link}}" target="_blank"
+                                       style="background-color: #f60000; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Verified
+                                        your email</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 20px;">
+                                    <p>Or, copy and paste the following URL into your browser: </p>
+                                    <p> <a href="{{reset_link}}" target="_blank">{{reset_link}}</a></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="line-height: 2.4; padding: 20px 0;">
+
+            This system email was sent to {{user_name}} ({{user_email}}) regarding your Soft Zone Account
+            <br>
+
+            USa70915f26e4b40f2a46442f8324c893e by <br>
+
+            Twilio, Inc., 375 Beale Street, Suite 300, San Francisco, CA 94105
+
+
+        </td>
+    </tr>
+</table>
+
+<script>
+
+</script>
+</body>
+
+</html>
