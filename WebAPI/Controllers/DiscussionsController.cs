@@ -12,7 +12,9 @@ using Dapper;
 
 namespace webapi_csharp.Controllers
 {
-    public class DiscussionsController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class DiscussionsController : Controller
     {
         private readonly ILogger<DiscussionsController> _logger;
         private string connString;
@@ -29,7 +31,7 @@ namespace webapi_csharp.Controllers
         
 
         
-        
+        [Route("create")]
         [HttpPost]
         public async Task<IActionResult> addDiscussion([FromBody] Discussion discussion) {
             try {
@@ -50,6 +52,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/service_id")]
         [HttpGet]
         public async Task<IActionResult> getDiscussionsByServiceId([FromQuery] int service_id) {
             try {
@@ -71,6 +74,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/id")]
         [HttpGet]
         public async Task<IActionResult> getDiscussionById([FromQuery] int id) {
             try {

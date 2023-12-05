@@ -13,7 +13,9 @@ using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
-    public class EndpointsController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class EndpointsController : Controller
     {
         private readonly ILogger<EndpointsController> _logger;
         private string connString;
@@ -30,7 +32,7 @@ namespace webapi_csharp.Controllers
         
 
         
-        
+        [Route("create")]
         [HttpPost]
         public async Task<IActionResult> addEndpoint([FromBody] EndpointRequest request) {
             try {
@@ -86,6 +88,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("update")]
         [HttpPost]
         public async Task<IActionResult> updateEndpoint([FromBody] EndpointRequest request) {
             try {
@@ -132,6 +135,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("headers/get/endpoint_id")]
         [HttpGet]
         public async Task<IActionResult> getHeadersByEndpointId([FromQuery] int endpoint_id) {
             try {
@@ -150,6 +154,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("bodies/get/endpoint_id")]
         [HttpGet]
         public async Task<IActionResult> getBodiesByEndpointId([FromQuery] int endpoint_id) {
             try {
@@ -168,6 +173,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("queries/get/endpoint_id")]
         [HttpGet]
         public async Task<IActionResult> getQueriesByEndpointId([FromQuery] int endpoint_id) {
             try {
@@ -186,6 +192,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("delete")]
         [HttpDelete]
         public async Task<IActionResult> deleteEndpoint([FromBody] DeleteEndpointRequest request) {
             try {
@@ -211,6 +218,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/service_id")]
         [HttpGet]
         public async Task<IActionResult> getEndpointsByServiceId([FromQuery] int service_id) {
             try {
@@ -229,6 +237,8 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        
+        [Route("get/service/service_category_id")]
         [HttpGet]
         public async Task<IActionResult> getServicesByServiceCategoryId([FromQuery] int service_category_id) {
             try {

@@ -13,7 +13,7 @@ namespace webapi_csharp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ServiceCategoriesController : ControllerBase
+    public class ServiceCategoriesController : Controller
     {
         private readonly ILogger<ServiceCategoriesController> _logger;
         private string connString;
@@ -28,7 +28,7 @@ namespace webapi_csharp.Controllers
         
 
         
-        [Route("get-service-categories")]
+        [Route("get")]
         [HttpGet]
         public async Task<IActionResult> getServiceCategories() {
             try {
@@ -46,7 +46,7 @@ namespace webapi_csharp.Controllers
             }
         }
         
-        [Route("get-service-categories/{id}")]
+        [Route("get/id")]
         [HttpGet]
         public async Task<IActionResult> getServiceCategoryById(int id) {
             try {

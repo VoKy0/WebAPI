@@ -12,7 +12,9 @@ using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
-    public class SearchController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class SearchController : Controller
     {
         private readonly ILogger<SearchController> _logger;
         private string connString;
@@ -27,7 +29,7 @@ namespace webapi_csharp.Controllers
         
 
         
-
+        [Route("search/services")]
         [HttpGet]
         public async Task<IActionResult> searchServices([FromQuery] string input) {
             try {
@@ -45,6 +47,7 @@ namespace webapi_csharp.Controllers
             }
         }
         
+        [Route("search/apps")]
         [HttpGet]
         public async Task<IActionResult> searchApps([FromQuery] string input) {
             try {

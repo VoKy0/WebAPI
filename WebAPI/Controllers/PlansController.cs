@@ -11,7 +11,9 @@ using Dapper;
 
 namespace webapi_csharp.Controllers
 {
-    public class PlansController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class PlansController : Controller
     {
         private readonly ILogger<PlansController> _logger;
         private string connString;
@@ -27,7 +29,7 @@ namespace webapi_csharp.Controllers
 
         
 
-        
+        [Route("create")]
         [HttpPost]
         public async Task<IActionResult> addPlan([FromBody] PlanRequest request) {
             try {
@@ -48,6 +50,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/plans_quota_limit/plan_id")]
         [HttpGet]
         public async Task<IActionResult> getPlansQuotaLimitByPlanId([FromQuery] int plan_id) {
             try {
@@ -66,6 +69,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/plans_rate_limit/plan_id")]
         [HttpGet]
         public async Task<IActionResult> getPlansRateLimitByPlanId([FromQuery] int plan_id) {
             try {
@@ -84,6 +88,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/service_id")]
         [HttpGet]
         public async Task<IActionResult> getPlansByServiceId([FromQuery] int service_id) {
             try {
@@ -102,6 +107,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("activate")]
         [HttpPost]
         public async Task<IActionResult> activatePlan([FromBody] ActivatePlanRequest request) {
             try {
@@ -120,6 +126,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("update/plan")]
         [HttpPost]
         public async Task<IActionResult> updatePlan([FromBody] UpdatePlanRequest request) {
             try {
@@ -140,6 +147,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("update/plan_quota_limit")]
         [HttpPost]
         public async Task<IActionResult> updatePlanQuotaLimit([FromBody] UpdatePlanQuotaLimitRequest request) {
             try {
@@ -160,6 +168,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("update/plan_rate_limit")]
         [HttpPost]
         public async Task<IActionResult> updatePlanRateLimit([FromBody] UpdatePlanRateLimitRequest request) {
             try {

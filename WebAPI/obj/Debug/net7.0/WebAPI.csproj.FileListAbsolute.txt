@@ -35,3 +35,4 @@ E:\Save\DaiHoc\Ky5\Framework\DoAn_Framework\web-api-csharp\WebAPI\WebAPI\obj\Deb
 E:\Save\DaiHoc\Ky5\Framework\DoAn_Framework\web-api-csharp\WebAPI\WebAPI\obj\Debug\net7.0\WebAPI.pdb
 E:\Save\DaiHoc\Ky5\Framework\DoAn_Framework\web-api-csharp\WebAPI\WebAPI\obj\Debug\net7.0\WebAPI.genruntimeconfig.cache
 E:\Save\DaiHoc\Ky5\Framework\DoAn_Framework\web-api-csharp\WebAPI\WebAPI\obj\Debug\net7.0\ref\WebAPI.dll
+E:\Save\DaiHoc\Ky5\Framework\DoAn_Framework\web-api-csharp\WebAPI\WebAPI\bin\Debug\net7.0\config\development-duc.json

@@ -12,7 +12,9 @@ using Dapper;
 
 namespace webapi_csharp.Controllers
 {
-    public class CommentsController : ControllerBase
+    [ApiController]
+    [Route("[controller]")]
+    public class CommentsController : Controller
     {
         private readonly ILogger<CommentsController> _logger;
         private string connString;
@@ -27,7 +29,7 @@ namespace webapi_csharp.Controllers
         
 
         
-        
+        [Route("create")]
         [HttpPost]
         public async Task<IActionResult> addComment([FromBody] Comment comment) {
             try {
@@ -48,6 +50,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/discussion_id")]
         [HttpGet]
         public async Task<IActionResult> getCommentsByDiscussionId([FromQuery] int discussion_id) {
             try {

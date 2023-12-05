@@ -13,7 +13,7 @@ namespace webapi_csharp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AppsController : ControllerBase
+    public class AppsController : Controller
     {
         private readonly ILogger<AppsController> _logger;
         private string connString;
@@ -28,7 +28,7 @@ namespace webapi_csharp.Controllers
         
 
         
-        [Route("get-apps")]
+        [Route("get")]
         [HttpGet]   
         public async Task<IActionResult> getApps() {
             try {
@@ -48,6 +48,7 @@ namespace webapi_csharp.Controllers
             }
         }
         
+        [Route("create")]
         [HttpPost]
         public async Task<IActionResult> addApp([FromBody] App app) {
             try {
@@ -68,6 +69,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/service_category_name")]
         [HttpGet]
         public async Task<IActionResult> getAppsByServiceCategoryName([FromQuery] string service_category_name) {
             try {
@@ -75,7 +77,7 @@ namespace webapi_csharp.Controllers
 
                 var query = @"SELECT apps.*
                               FROM apps, service_categories
-                              WHERE apps.service_category_id = service_categories.id AND service_categories.name = @ServiceCategoryName";
+                              WHERE apps.service_id = service_categories.id AND service_categories.name = @ServiceCategoryName";
 
                 var rows = await conn.QueryAsync<dynamic>(query, new { ServiceCategoryName = service_category_name });
 
@@ -88,6 +90,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/service_category_id")]
         [HttpGet]
         public async Task<IActionResult> getAppsByServiceCategoryId([FromQuery] string service_category_id) {
             try {
@@ -108,6 +111,7 @@ namespace webapi_csharp.Controllers
             }
         }
 
+        [Route("get/vendor_id")]
         [HttpGet]
         public async Task<IActionResult> getAppsByVendorId([FromQuery] int vendor_id) {
             try {

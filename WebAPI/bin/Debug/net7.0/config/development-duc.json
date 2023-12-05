@@ -1,0 +1,71 @@
+{
+  "DATABASE_TYPE": "POSTGRESQL",
+  "DATABASE": {
+    "POSTGRESQL": {
+      "HOST": "103.42.57.126",
+      "PORT": 5432,
+      "USER": "admin",
+      "PASSWORD": "sa123456",
+      "DATABASE": "ai-platform"
+    },
+    "REDIS": {
+      "HOST": "103.42.57.126",
+      "PORT": 6379,
+      "USER": "default",
+      "PASSWORD": "sa123456",
+      "DATABASE": 1
+    },
+    "CLOUDINARY": {
+      "NAME": "dozymxbn0",
+      "API_KEY": "163165859167951",
+      "API_SECRET": "pqD5GU9iDpbUzUDYfbCOZ8w0lI8"
+    }
+  },
+  "API": {
+    "HOST": "0.0.0.0",
+    "PORT": 2204,
+    "ROUTES": {
+
+    }
+  },
+  "AUTH": {
+    "JWT": {
+      "ACCESS_TOKEN": {
+        "PRIVATE_KEY": "MIICXAIBAAKBgQDTUS/xu8ffcdxkQ0QGqxafBat1I+yG/7KC1i/hbbp7l8zv44IBo2tYO67Xq21A1hedVWq+6grIq1TLq52wotMM47tNJoc3KYwb8SAr6Cc46G73kzi49l39+elZwTAsNJpqUBA4njIxdSQ7nt0KA7lDhp1bVuQdtppQMsNOrTUkHQIDAQABAoGAeimiPO5g4wUQ8wmMBwrbXf1KHMMy1ux1R3wJXBoyR4b/W+M7YjUWNoDyWA3rcCMUrckWl933dADQWZoR5G6M8QYzgZqW+KKZSJR8239pWKP7htPTueRvCUiH+R4n9wFwfrjDPNvK57sYAonENG/ITl88z0eIbw6Od55JY9014UUCQQD30vA/47D7xSjJyI/0KIHzTTClig0IQVsd2egI6ioinylSPIHqnUrA2yd1+dDqYlIhQ5uexGijowWhFU/SJrZfAkEA2knrvDHPZl31mC/UymZ8wgIB2nELIl7XsDFMgHJ1+5QuuBGVLh0OgKoLEroBHiwtYVsjKKKxer4BOx+O7gSfAwJASboGYWtylqRECyvQr7lxV5mKNGVKlT8kRVAzeJt5Z41kNKPtnoem2pMYPT/RyDjx6BV98ZDK9IumPBLkCUgdDwJBAL0gutxtk7KvyfA30PgkYAd/0bc/plP7NIl1zUCk61A0DV5x7Xzss/oKWlm5SuqngBIP8qBshbVBFrPxHddfrZ0CQEFF6ESsRnsfGxQ82wKyAhp/nAPg9Zl/cQO6BMjlugooXSXKTCVb8kSqmXnyThLXLSFIOgsgzVy4ndwjyYjD9DU=",
+        "EXPIRES_IN": "14m",
+        "VERIFY_EMAIL_EXPIRES_IN": "3m"
+      },
+      "REFRESH_TOKEN": {
+        "PRIVATE_KEY": "MIICXAIBAAKBgQCv2eGHd+/aOwkopZg0o2Q7mY0CpRmgmOPvViNbOnL4ypan1KRzgCkjP3TjWh09bSO+KGM/M6ePXDWQIlO7P3hMDUkIeoxleR4ft44oaIaDXOZx/z5z1/zYYSV+K4DyEFafA47qf/jyBbxIs8Jl5Gg7WNUbyuz7I7y+K81txatr5QIDAQABAoGACgAbCkgw1LlMwQoByOSN27HUyhS3i2GGfOLqKdL+HNXwkWTPYV4leMKwFAnY5dhiEvtbAYofelClHyhEmL54Scq4IHTZ4OM+NaNj7We++V8OYucNQIg8wjOHzZTkScwTuj3oM45Ht/fy9VKYIdzyoIij3ryYYj8fEsiXBP/MrtUCQQDky99yPPWlwgqzUAGlzTE4NIhaIzYadK9XBjzIzlxRQBgjEbCNu/xAMqnhBGudyZmYDpvGJsOX6OVitMX0yl6DAkEAxMJ0UOP1RykxRlm1ldg47sqkpvNLGdQZW9xG5ssgvuoh7kPXEjpVM7fUJ+JIOy8Mroubzii58y5QvOIlQKf/dwJBANvbDNy5t1ORIrcsKmkoxCM+V8hGDbdeaR823zIXGp74+Di6xu1rtvn5tUSE+uSk1PNJFmdS2KEhK0uuaorP7AECQCIKKilcZrC69aVgG8QitibJtBaV/KYpRYHY6ANBnRaqVthrsCedI+RgpzmHMkva5ezEhl3yOclSd/FVhnBbIB0CQBM15qqHj91tx4C5xqm3TskheNVfjbAEnxU74lJiNA6CKOQ7SgxgGtNkLzgjxcaAQ9Q7fsQZb1wmoXaSw1Xugpg=",
+        "EXPIRES_IN": "30d"
+      }
+    },
+    "GOOGLE": {
+      "CLIENT_ID": "585722177165-sd2uesvnhta8dj1mpf63r0vp5kt4co0u.apps.googleusercontent.com",
+      "CLIENT_SECRET": "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"
+    },
+    "GITHUB": {
+      "CLIENT_ID": "df0dbc3e287369f371b5",
+      "CLIENT_SECRET": "e3026d86d4ba7ca9fa94e482c864f84fe39225d0"
+    },
+    "FACEBOOK": {
+      "CLIENT_ID": "1607559409766924",
+      "CLIENT_SECRET": "02480f2102291595648d68364c6535b9"
+    }
+  },
+  "STRIPE": {
+    "SECRET_STRIPE_KEY": "sk_test_51NmfFnAJcoaTPifS6S8bEactdX8MtQri5BnSvSUrDOJCsDFXX0yZ1kfxdcit575Tmqvr1caYGFZMXIDpB6UwECkr00ZClCuE7T",
+    "PUBLIC_STRIPE_KEY": "pk_test_51NmfFnAJcoaTPifSjRMYSx2OdroBhXUZCNsUNJqIj5UIKuguLsWPlUgpeCISBaJUnYqtaOqDVC1GchmKYkyhZJij00HXUFBeEG"
+  },
+  "PRIVATE_INFORM": {
+    "EMAIL": {
+      "ADDRESS": "21522527@gm.uit.edu.vn",
+      "PASSWORD": "cwdpmarndvfdyfum"
+    },
+    "PHONE": "+13342343388",
+    "TWILIO": {
+      "ACCOUNT_SID": "ACb327254c49f479c2b086757843c6f40f",
+      "AUTH_TOKEN": "35759e5255eb3e6d9edc58fa799ca2f4"
+    }
+  }
+}
