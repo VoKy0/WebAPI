@@ -4,11 +4,11 @@ const cloudinaryProvider = new CloudinaryServices();
 
 const uploadImage = async (req, res) => {
     try {
-        const publicId = await cloudinaryProvider.uploadImage(req.body.image_path);
+        const result = await cloudinaryProvider.uploadImage(req.body.image_data);
         res.status(200).json({
             "success": true,
             "message": "Data successfully added to the database.",
-            "data": [{'id': publicId}]
+            "data": [result]
         })
     } catch(err) {
         console.log('error here: ', err.message);
@@ -19,7 +19,6 @@ const uploadImage = async (req, res) => {
 const deleteImage = async (req, res) => {
     try {
         const isDestroyed = await cloudinaryProvider.destroyImage(req.body.public_id);
-        console.log(isDestroyed)
         if (isDestroyed) {
             res.status(200).json({
                 "success": true,

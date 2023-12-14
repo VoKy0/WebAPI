@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const router = express.Router()
-const {generateVerifyAccountToken} = require("../controllers/authController");
+const {generateVerifyAccountToken} = require("../Controllers/authController");
 const User = require("../models/User");
 const Auth = require("../models/Auth");
 

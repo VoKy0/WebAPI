@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getApps, addApp, getAppsByVendorId} = require('../controllers/appsController')
+const {getApps, addApp, getAppsByVendorId} = require('../Controllers/appsController')
 const {verifyToken} = require('../middleware/auth');
 
 router.route('/get').get(verifyToken, getApps);

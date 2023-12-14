@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {updateService, getServices,getServiceById, getServicesByServiceCategoryId, getServicesByServiceCategoryName, getServicesByVendorId, addService} = require('../controllers/servicesController')
+const {updateService, getServices,getServiceById, getServicesByServiceCategoryId, getServicesByServiceCategoryName, getServicesByVendorId, addService} = require('../Controllers/servicesController')
 const {verifyToken} = require('../middleware/auth');
 
 router.route('/get').get(verifyToken, getServices);

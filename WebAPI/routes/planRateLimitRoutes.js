@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {updatePlanRateLimit, getPlansRateLimitByPlanId} = require('../controllers/plansController')
+const {updatePlanRateLimit, getPlansRateLimitByPlanId} = require('../Controllers/plansController')
 const {verifyToken} = require('../middleware/auth');
 
 router.route('/update').post(verifyToken, updatePlanRateLimit);

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {updateEndpoint, getHeadersByEndpointId, getQueriesByEndpointId, getBodiesByEndpointId, addEndpoint, deleteEndpoint, getEndpointsByServiceId} = require('../controllers/endpointsController')
+const {updateEndpoint, getHeadersByEndpointId, getQueriesByEndpointId, getBodiesByEndpointId, addEndpoint, deleteEndpoint, getEndpointsByServiceId} = require('../Controllers/endpointsController')
 const {verifyToken} = require('../middleware/auth');
 
 router.route('/get/service_id').get(verifyToken, getEndpointsByServiceId);

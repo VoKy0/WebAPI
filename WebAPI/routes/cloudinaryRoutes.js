@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {uploadImage, fetchImage, deleteImage} = require('../controllers/cloudinaryController')
+const {uploadImage, fetchImage, deleteImage} = require('../Controllers/cloudinaryController')
 const {verifyToken} = require('../middleware/auth');
 
 router.route('/get').get(verifyToken, fetchImage);

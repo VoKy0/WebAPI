@@ -3,7 +3,7 @@ const session = require('express-session');
 const { RateLimiterMemory } = require('rate-limiter-flexible');
 const cors = require("cors");
 const {verifyRequest, verifyQuotaLimit, verifyRateLimit} = require("../middleware/serviceAuth");
-const {redirectGetRequest, redirectPostRequest} = require("../controllers/proxyControllers");
+const {redirectGetRequest, redirectPostRequest} = require("../Controllers/proxyControllers");
 let port = 2205;
 function createProxyServer(db, serviceMetadata) {
     console.log(serviceMetadata)
