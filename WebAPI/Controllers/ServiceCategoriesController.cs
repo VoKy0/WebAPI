@@ -8,11 +8,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
+using Microsoft.AspNetCore.Cors;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/tables/service-categories")]
+    [EnableCors("AllowSpecificOrigin")]
     public class ServiceCategoriesController : Controller
     {
         private readonly ILogger<ServiceCategoriesController> _logger;

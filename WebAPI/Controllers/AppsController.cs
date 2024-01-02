@@ -8,11 +8,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
+using Microsoft.AspNetCore.Cors;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/tables/apps")]
+    [EnableCors("AllowSpecificOrigin")]
     public class AppsController : Controller
     {
         private readonly ILogger<AppsController> _logger;

@@ -12,10 +12,11 @@ namespace webapi_csharp.services
 
     public class CloudinaryServices
     {
+        private readonly IConfiguration configuration;
         private readonly Account _account;
         private readonly Cloudinary _cloudinary;
 
-        public CloudinaryServices(IConfiguration configuration)
+        public CloudinaryServices()
         {
             var cloudName = configuration["DATABASE:CLOUDINARY:NAME"];
             var apiKey = configuration["DATABASE:CLOUDINARY:API_KEY"];
@@ -24,7 +25,6 @@ namespace webapi_csharp.services
             _account = new Account(cloudName, apiKey, apiSecret);
             _cloudinary = new Cloudinary(_account);
         }
-
         public string uploadImage(string imagePath = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg")
         {
             var uploadParams = new ImageUploadParams
@@ -55,7 +55,7 @@ namespace webapi_csharp.services
             {
                 var deletionParams = new DeletionParams(publicId);
                 var deletionResult = _cloudinary.Destroy(deletionParams);
-                return deletionResult.Result == "ok";
+                return true;
             }
             catch (Exception ex)
             {

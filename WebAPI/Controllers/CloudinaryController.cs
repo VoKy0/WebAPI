@@ -10,11 +10,14 @@ using Npgsql;
 using Dapper;
 
 using webapi_csharp.services;
+using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Cors;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/utilities/cloudinary")]
+    [EnableCors("AllowSpecificOrigin")]
     public class CloudinaryController : Controller
     {
         private readonly CloudinaryServices _cloudinaryProvider;
@@ -37,12 +40,12 @@ namespace webapi_csharp.Controllers
         {
             try
             {
-                var result = await _cloudinaryProvider.uploadImage(request.ImageData);
+                var result = _cloudinaryProvider.uploadImage(request.ImageData);
                 return Ok(new 
                 {
                     success = true,
                     message = "Data successfully added to the database.",
-                    data = [result]
+                    data = new[] { result }
                 });
             }
             catch (Exception ex)
@@ -62,7 +65,7 @@ namespace webapi_csharp.Controllers
         {
             try
             {
-                var isDestroyed = await _cloudinaryProvider.destroyImage(request.PublicId);
+                var isDestroyed = _cloudinaryProvider.destroyImage(request.PublicId);
                 return isDestroyed
                     ? Ok(new { success = true, message = "Image successfully deleted from Cloudinary.", data = new List<object>() })
                     : Ok(new { success = false, message = "Image cannot be deleted from Cloudinary.", data = new List<object>() });
@@ -103,10 +106,10 @@ namespace webapi_csharp.Controllers
                 });
             }
         }
-
+    }
     public class Image
     {
-            public int PublicId {get; set;}
+            public string PublicId {get; set;}
             public string ImageData {get; set;}
     }
 }

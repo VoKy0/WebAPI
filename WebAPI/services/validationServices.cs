@@ -17,7 +17,7 @@ namespace webapi_csharp.services
             bool isValid = true;
             string message = "";
 
-            if (username.length < 6 || username.length > 15) {
+            if (username.Length < 6 || username.Length > 15) {
                 isValid = false;
                 message = "Username length must >= 6 and <= 15";
             }
@@ -35,18 +35,18 @@ namespace webapi_csharp.services
 
             var passwordValidator = new PasswordValidator();
             passwordValidator
-                .HasMinimumLength(8);           // Minimum length 8
-                .HasMaximumLength(25);          // Maximum length 25
-                .HasUpperCase();                // Must have uppercase letters
-                .HasLowerCase();                // Must have lowercase letters
-                .HasDigit();                    // Must have at least 1 digits
-                .HasNoSpace()                   // Should not have spaces
+                .HasMinimumLength(8)                // Minimum length 8
+                .HasMaximumLength(25)               // Maximum length 25
+                .HasUpperCase()                     // Must have uppercase letters
+                .HasLowerCase()                     // Must have lowercase letters
+                .HasDigit()                         // Must have at least 1 digits
+                .HasNoSpace();                      // Should not have spaces
 
-            var valiadteResults = passwordValidator.Validate(password)
+            var valiadteResults = passwordValidator.Validate(password);
 
             if (valiadteResults.Any()) {
                 isValid = false;
-                message = string.Join(". ", validateResult.Select(result => result.Replace("The string", "Password"))) + ".";
+                message = string.Join(". ", valiadteResults.Select(result => result.Replace("The string", "Password"))) + ".";
             }
 
             return (isValid, message);
@@ -72,9 +72,10 @@ namespace webapi_csharp.services
             if (!validPassword.valid) {
                 return (validPassword.valid, validPassword.message);
             }
+
+            return (true, "");
         }
     }
-
     public class PasswordValidator
     {
         private readonly PasswordRules rules;

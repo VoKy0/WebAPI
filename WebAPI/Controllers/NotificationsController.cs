@@ -9,12 +9,15 @@ using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
 using System.Transactions;
+using Microsoft.AspNetCore.Cors;
+
 using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/tables/notifications")]
+    [EnableCors("AllowSpecificOrigin")]
     public class NotificationsController : Controller
     {
         private readonly ILogger<NotificationsController> _logger;

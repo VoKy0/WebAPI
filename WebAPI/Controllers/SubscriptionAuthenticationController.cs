@@ -9,11 +9,13 @@ using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
 using webapi_csharp.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/tables/subscription-authentication")]
+    [EnableCors("AllowSpecificOrigin")]
     public class SubscriptionAuthenticationController : Controller
     {
         private readonly ILogger<SubscriptionAuthenticationController> _logger;

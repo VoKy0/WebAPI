@@ -8,12 +8,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
+using Microsoft.AspNetCore.Cors;
+
 using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/local-analytics")]
+    [EnableCors("AllowSpecificOrigin")]
+
     public class LocalAnalyticsController : Controller
     {
         private readonly ILogger<LocalAnalyticsController> _logger;

@@ -8,12 +8,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
+using Microsoft.AspNetCore.Cors;
+
 using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/search")]
+    [EnableCors("AllowSpecificOrigin")]
     public class SearchController : Controller
     {
         private readonly ILogger<SearchController> _logger;

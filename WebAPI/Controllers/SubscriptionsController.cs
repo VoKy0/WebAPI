@@ -8,12 +8,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using Dapper;
+using Microsoft.AspNetCore.Cors;
+
 using webapi_csharp.Models;
 
 namespace webapi_csharp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/db/tables/subscriptions")]
+    [EnableCors("AllowSpecificOrigin")]
     public class SubscriptionsController : Controller
     {
         private readonly ILogger<SubscriptionsController> _logger;
