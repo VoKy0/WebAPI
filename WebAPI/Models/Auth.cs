@@ -92,4 +92,10 @@ namespace webapi_csharp.Models {
             return rows.AsList().Count > 0;
         }
     }
+
+    public class User
+    {
+        public int Id { get; set; }
+        public string Role { get; set; }       
+    }
 }
